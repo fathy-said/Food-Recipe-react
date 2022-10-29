@@ -1,13 +1,6 @@
-import SubHeading from './SubHeading/SubHeading';
-import Newsletter from './Footer/Newsletter';
-import FooterOverlay from './Footer/FooterOverlay';
-import MenuItem from './Menuitem/MenuItem';
-import Navbar from './Navbar/Navbar';
+import Popular from "./Popular/Popular";
+import Newsletter from "./Footer/Newsletter";
+import FooterOverlay from "./Footer/FooterOverlay";
+import Navbar from "./Navbar/Navbar";
 
-export {
-  SubHeading,
-  Newsletter,
-  FooterOverlay,
-  MenuItem,
-  Navbar,
-};
+export { Popular, Newsletter, FooterOverlay, Navbar };
