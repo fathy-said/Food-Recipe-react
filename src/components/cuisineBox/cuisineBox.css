@@ -1,0 +1,31 @@
+.cuisine-box {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.cuisine-box .box {
+  border-radius: var(--border-red);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cuisine-box .box img {
+  width: 100%;
+  border-radius: var(--border-red);
+  height: 300px;
+  object-fit: cover;
+}
+
+.cuisine-box .box h4 {
+  margin: 0;
+  font-size: var(--fnt-22px);
+  font-weight: 600;
+  color: var(--color-black);
+  text-transform: capitalize;
+}

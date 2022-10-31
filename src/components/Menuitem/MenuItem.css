@@ -1,0 +1,40 @@
+.menu-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.menu-box .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--color-grey);
+  color: var(--color-white);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+
+}
+
+.menu-box .icon.active {
+  background-image: linear-gradient(135deg, #FCCF31 10%, #F55555 100%);
+}
+
+.menu-box .icon svg {
+  font-size: var(--fnt-17px);
+  font-weight: 600;
+
+}
+
+.menu-box .icon h6 {
+  font-size: var(--fnt-10px);
+  font-weight: 600;
+  text-transform: capitalize;
+}

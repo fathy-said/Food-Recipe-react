@@ -1,8 +1,8 @@
-.popular-box {
+.veggie-box {
   margin: 20px 0;
 }
 
-.popular-box .title {
+.veggie-box .title {
   font-weight: 600;
   color: var(--color-black);
   font-size: var(--fnt-20px);
@@ -10,14 +10,14 @@
   margin: 0;
 }
 
-.popular-box .box {
+.veggie-box .box {
   border-radius: var(--border-red);
   overflow: hidden;
   position: relative;
   margin: 20px 0;
 }
 
-.popular-box .box::before {
+.veggie-box .box::before {
   content: '';
   position: absolute;
   left: 0;
@@ -29,7 +29,7 @@
 }
 
 
-.popular-box .box p {
+.veggie-box .box p {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -41,7 +41,7 @@
   padding: 0 10px;
 }
 
-.popular-box .box img {
+.veggie-box .box img {
   width: 100%;
   height: 250px;
   object-fit: cover;

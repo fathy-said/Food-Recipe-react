@@ -1,19 +1,9 @@
 import React from "react";
-import {
-    AboutUs,
-    Chef,
-    FindUs,
-    Footer,
-    Gallery,
-    Header,
-    Intro,
-    Laurels,
-    SpecialMenu,
-} from "../container";
-import { Navbar, Popular } from "../components/index";
+import { Popular, Veggie } from "../components/index";
 const HomePages = () => {
     return (
         <>
+            <Veggie />
             <Popular />
         </>
     );

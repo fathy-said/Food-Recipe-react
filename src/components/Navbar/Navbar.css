@@ -1,0 +1,33 @@
+.nav-bar {
+  margin-top: 20px;
+}
+
+.nav-bar a {
+  text-decoration: none !important;
+  display: flex;
+  align-self: center;
+  justify-content: flex-start;
+  grid-area: 10px;
+  font-size: var(--fnt-35px);
+  transition: var(--transition);
+  color: var(--color-back);
+
+}
+
+.nav-bar a:hover {
+
+  color: var(--color-gray);
+
+}
+
+.nav-bar svg {}
+
+.nav-bar h3 {
+  font-family: 'Dancing Script', cursive !important;
+  margin: 0;
+  display: flex;
+  align-self: center;
+  justify-content: flex-start;
+  font-size: var(--fnt-35px);
+  font-weight: 700;
+}

@@ -1,0 +1,82 @@
+.recipe-box {
+  justify-content: space-between;
+  margin: 40px 0 !important;
+}
+
+.recipe-box .box-left {}
+
+.recipe-box .box-left h2 {
+  font-size: var(--fnt-28px);
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--color-black);
+  margin-bottom: 20px;
+}
+
+.recipe-box .box-left img {
+  width: 100%;
+}
+
+.recipe-box .box-right {}
+
+.recipe-box .box-right .bt-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+
+}
+
+.recipe-box .box-right .bt-box button {
+
+  background-color: transparent;
+  border: 3px solid var(--color-black);
+  width: 150px;
+  height: 50px;
+  font-size: var(--fnt-18px);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.recipe-box .box-right .bt-box button.active {
+  background-color: var(--color-gray);
+  border: 3px solid var(--color-black);
+  color: var(--color-white);
+}
+
+
+
+.recipe-box .box-right p {
+  font-size: var(--fnt-22px);
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--color-black);
+  margin: 40px 0;
+  line-height: 1.7;
+}
+
+.recipe-box .box-right div {
+  display: none;
+}
+
+.recipe-box .box-right div.active {
+  display: block;
+}
+
+.recipe-box .box-right p a {
+
+  color: var(--color-black);
+
+}
+
+.recipe-box .box-right div ul {
+  margin: 40px 0;
+}
+
+.recipe-box .box-right div ul li {
+  font-size: var(--fnt-18px);
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--color-gray);
+  margin-bottom: 10px;
+}

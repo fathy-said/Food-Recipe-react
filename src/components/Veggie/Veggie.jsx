@@ -1,56 +1,52 @@
 import React, { useEffect, useState } from "react";
-import "./popular.css";
+import "./Veggie.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-const Popular = () => {
-    const [getPopular, setPopular] = useState([]);
+import { Link } from "react-router-dom";
+const Veggie = () => {
+    const [getVeggie, setVeggie] = useState([]);
 
     useEffect(() => {
         fetchAxios();
     }, []);
 
     let fetchAxios = async () => {
-        let check = localStorage.getItem("popular");
+        let check = localStorage.getItem("veggie");
         if (check != null) {
-            setPopular(JSON.parse(check));
+            setVeggie(JSON.parse(check));
         } else {
             let res = await axios.get(
-                `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+                `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian `
             );
-            localStorage.setItem("popular", JSON.stringify(res.data.recipes));
-            setPopular(res.data.recipes);
+            localStorage.setItem("veggie", JSON.stringify(res.data.recipes));
+            setVeggie(res.data.recipes);
         }
     };
 
     return (
-        <div className="popular-box">
-            <h2 className="title">Trending</h2>
+        <div className="veggie-box">
+            <h2 className="title">Our vegetarian Picks</h2>
             <Splide
                 options={{
-                    perPage: 4,
-
+                    perPage: 3,
                     arrows: false,
                     pagination: false,
                     drag: "free",
                     gap: "4rem",
-
                     breakpoints: {
                         992: {
                             perPage: 2,
-                        },
-                        640: {
-                            perPage: 1,
+                            gap: "2rem",
                         },
                     },
                 }}
             >
-                {getPopular.length ? (
-                    getPopular.map((recipe) => {
+                {getVeggie.length ? (
+                    getVeggie.map((recipe) => {
                         return (
                             <SplideSlide key={recipe.id}>
-                                <Link to={"recipe/" + recipe.id}>
+                                <Link to={"/recipe/" + recipe.id}>
                                     <div className="box">
                                         <p>{recipe.title} </p>
                                         <img src={recipe.image} alt="" />
@@ -67,4 +63,4 @@ const Popular = () => {
     );
 };
 
-export default Popular;
+export default Veggie;
