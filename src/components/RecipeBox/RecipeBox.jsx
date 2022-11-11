@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Fade from 'react-reveal/Fade';
+
 import "./RecipeBox.css";
 const RecipBox = () => {
     let params = useParams();
@@ -19,10 +21,12 @@ const RecipBox = () => {
     }, [params.name]);
     return (
         <div className="recipe-box row gap-5 gap-lg-0 ">
-            <div className="box-left  col-lg-5">
-                <h2>{getDetails.title}</h2>
-                <img src={getDetails.image} alt="" />
-            </div>
+            <Fade bottom>
+
+                <div className="box-left  col-lg-5">
+                    <h2>{getDetails.title}</h2>
+                    <img src={getDetails.image} alt="" />
+                </div></Fade>
             <div className="box-right col-lg- col-lg-6">
                 <div className="bt-box">
                     <button
@@ -42,26 +46,28 @@ const RecipBox = () => {
                         ingredients
                     </button>
                 </div>
-                <div className={getActive === "instructions" ? "active" : ""}>
-                    <p
-                        dangerouslySetInnerHTML={{ __html: getDetails.summary }}
-                    ></p>
-                    <p
-                        dangerouslySetInnerHTML={{
-                            __html: getDetails.instructions,
-                        }}
-                    ></p>
-                </div>
+                <Fade bottom>
 
-                <div className={getActive === "ingredients" ? "active" : ""}>
-                    <ul>
-                        {getDetails.extendedIngredients
-                            ? getDetails.extendedIngredients.map((el) => (
-                                  <li key={el.id + 100}>{el.original}</li>
-                              ))
-                            : null}
-                    </ul>
-                </div>
+                    <div className={getActive === "instructions" ? "active" : ""}>
+                        <p
+                            dangerouslySetInnerHTML={{ __html: getDetails.summary }}
+                        ></p>
+                        <p
+                            dangerouslySetInnerHTML={{
+                                __html: getDetails.instructions,
+                            }}
+                        ></p>
+                    </div>
+
+                    <div className={getActive === "ingredients" ? "active" : ""}>
+                        <ul>
+                            {getDetails.extendedIngredients
+                                ? getDetails.extendedIngredients.map((el) => (
+                                    <li key={el.id + 100}>{el.original}</li>
+                                ))
+                                : null}
+                        </ul>
+                    </div></Fade>
             </div>
         </div>
     );

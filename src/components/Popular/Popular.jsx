@@ -4,6 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import Fade from 'react-reveal/Fade';
+
 const Popular = () => {
     const [getPopular, setPopular] = useState([]);
 
@@ -50,12 +52,16 @@ const Popular = () => {
                     getPopular.map((recipe) => {
                         return (
                             <SplideSlide key={recipe.id}>
-                                <Link to={"recipe/" + recipe.id}>
-                                    <div className="box">
-                                        <p>{recipe.title} </p>
-                                        <img src={recipe.image} alt="" />
-                                    </div>
-                                </Link>
+                                <Fade bottom>
+
+
+                                    <Link to={"recipe/" + recipe.id}>
+                                        <div className="box">
+                                            <p>{recipe.title} </p>
+                                            <img src={recipe.image} alt="" />
+                                        </div>
+                                    </Link>
+                                </Fade>
                             </SplideSlide>
                         );
                     })

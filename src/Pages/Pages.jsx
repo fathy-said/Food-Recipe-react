@@ -1,7 +1,6 @@
 import React from "react";
 import { HomePages, Cuisine, Searched, Recipe } from "./index";
 import { Route, Routes } from "react-router-dom";
-
 const Pages = () => {
     return (
         <>
@@ -16,3 +15,4 @@ const Pages = () => {
 };
 
 export default Pages;
+

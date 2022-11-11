@@ -4,6 +4,8 @@ import axios from "axios";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
+import Fade from 'react-reveal/Fade';
+
 const Veggie = () => {
     const [getVeggie, setVeggie] = useState([]);
 
@@ -45,13 +47,15 @@ const Veggie = () => {
                 {getVeggie.length ? (
                     getVeggie.map((recipe) => {
                         return (
-                            <SplideSlide key={recipe.id}>
+
+
+                            <SplideSlide key={recipe.id}> <Fade bottom>
                                 <Link to={"/recipe/" + recipe.id}>
                                     <div className="box">
                                         <p>{recipe.title} </p>
                                         <img src={recipe.image} alt="" />
                                     </div>
-                                </Link>
+                                </Link></Fade>
                             </SplideSlide>
                         );
                     })

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import "./SearchedBox.css";
+import Fade from 'react-reveal/Fade';
+
 const SearchedBox = () => {
     const [getQuery, setQuery] = useState([]);
     let params = useParams();
@@ -20,12 +22,15 @@ const SearchedBox = () => {
             <div className="searched-box">
                 {getQuery.map((el) => {
                     return (
-                        <div className="box" key={el.id}>
-                            <Link to={"/recipe/" + el.id}>
-                                <img src={el.image} alt={el.title} />
-                            </Link>
-                            <h4>{el.title}</h4>
-                        </div>
+                        <Fade bottom key={el.id}>
+
+                            <div className="box" >
+                                <Link to={"/recipe/" + el.id}>
+                                    <img src={el.image} alt={el.title} />
+                                </Link>
+                                <h4>{el.title}</h4>
+                            </div>
+                        </Fade>
                     );
                 })}
             </div>

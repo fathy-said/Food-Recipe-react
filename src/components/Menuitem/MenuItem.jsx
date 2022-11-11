@@ -6,7 +6,7 @@ import { GiNoodles, GiHamburger, GiChopsticks } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 
 const MenuItem = () => (
-    <div className="menu-box">
+    <div className="menu-box gap-3 gap-md-5">
         <NavLink className="icon" to={"/cuisine/italian"}>
             <FaPizzaSlice />
             <h6>italian</h6>
